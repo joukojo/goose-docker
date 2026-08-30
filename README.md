@@ -1,6 +1,10 @@
 # Goose Docker Image
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/joukojo/goose?style=flat-square)](https://hub.docker.com/r/joukojo/goose)
+[![Docker Image Size](https://img.shields.io/docker/image-size/joukojo/goose/latest?style=flat-square)](https://hub.docker.com/r/joukojo/goose)
+
 This repository builds a minimal Docker image for the `goose` database migration tool.
+Goose upstream: [github.com/pressly/goose](https://github.com/pressly/goose)
 It installs the `goose` CLI in a tiny Debian runtime image and runs it as a non-root user.
 
 ## What’s Inside
@@ -9,6 +13,16 @@ It installs the `goose` CLI in a tiny Debian runtime image and runs it as a non-
 - Default database driver: `postgres`
 - Migrations directory inside the container: `/migrations`
 - Runs as user: `goose` (non-root)
+
+## Prebuilt Image
+
+The image is publicly available on Docker Hub.
+
+```bash
+docker pull joukojo/goose:latest
+```
+
+Docker Hub page: [hub.docker.com/r/joukojo/goose](https://hub.docker.com/r/joukojo/goose)
 
 ## Build
 
