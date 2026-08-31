@@ -1,7 +1,7 @@
-FROM golang:1.25.6-trixie AS build
+FROM golang:1.27.0-trixie AS build
 
 ENV CGO_ENABLED=0 GOBIN=/out
-RUN go install github.com/pressly/goose/v3/cmd/goose@v3.26.0
+RUN go install github.com/pressly/goose/v3/cmd/goose@v3.27.3
 
 
 
@@ -27,4 +27,3 @@ ENV GOOSE_TABLE=public.goose_migrations
 
 ENTRYPOINT  ["/usr/local/bin/goose"]
 CMD ["-h"] 
-
