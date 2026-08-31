@@ -30,6 +30,29 @@ Docker Hub page: [hub.docker.com/r/joukojo/goose](https://hub.docker.com/r/jouko
 docker build -t goose-image .
 ```
 
+## Releases and Image Tags
+
+This repository follows Git Flow. Start normal changes from `develop` on a
+`feature/*` branch, and create `release/<version>` branches from `develop` when
+preparing a release.
+
+The publishing workflow creates these Docker tags:
+
+- A push to `develop` publishes `develop` and `sha-<commit>`.
+- A push to `release/1.2.3` publishes `release-1.2.3` and `sha-<commit>`.
+- A Git tag such as `v1.2.3` publishes `v1.2.3`, `1.2.3`, `1.2`, `1`,
+  `latest`, and `sha-<commit>`.
+
+After a release branch has been validated and merged into the production
+branch, create and push an annotated semantic-version tag:
+
+```bash
+git tag -a v1.2.3 -m "Release v1.2.3"
+git push origin v1.2.3
+```
+
+Only tags matching `v<major>.<minor>.<patch>` trigger a tagged image release.
+
 ## Run
 
 Mount your migrations folder and provide a connection string.
