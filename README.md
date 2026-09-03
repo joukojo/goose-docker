@@ -9,7 +9,7 @@ It installs the `goose` CLI in a tiny Debian runtime image and runs it as a non-
 
 ## What’s Inside
 
-- `goose` CLI version `v3.26.0`
+- `goose` CLI version `v3.28.0`
 - Default database driver: `postgres`
 - Migrations directory inside the container: `/migrations`
 - Runs as user: `goose` (non-root)
